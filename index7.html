@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <div class="row sticky-top" style="width: 121.5%;background-color: white;height: 150px;margin-left: -120px">
+        <div class="col-md-8">
+            <img src="rasmlar/Снимок.PNG" class="rounded-circle" width="120" height="120" alt="">
+            <a href="http://localhost:63342/yakuniy%20praktika/index.html?_ijt=d6skknflh4n59bj07jflsid92" class="btn btn-success menu" style="margin-left: 250px">All Sneakers</a>
+            <a href="http://localhost:63342/yakuniy%20praktika/index2.html?_ijt=9niofqm164l80fi3cuqimihbut" class="btn btn-primary menu" >Nike</a>
+            <a href="http://localhost:63342/yakuniy%20praktika/index3.html?_ijt=oekqptpf6ja009selovts33m87" class="btn btn-primary menu" >Gucci</a>
+            <a href="http://localhost:63342/yakuniy%20praktika/index4.html?_ijt=oekqptpf6ja009selovts33m87" class="btn btn-primary menu" >Adidas</a>
+        </div>
+        <div class="col-md-2" style="position: relative;top: 40px">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="startModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="mb-0">Tizimga kirish</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="login">Loginni kiriting</label>
+                    <input type="text" class="form-control" id="login">
+                </div>
+                <div class="form-group">
+                    <label for="password">Parolni kiriting</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="startBtn">Kirish</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="mb-0">Ma'lumotni o'zgartirish:</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditUser">To'lovchi</label>
+                            <input type="text" class="form-control" id="payEditUser">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditUserId">To'lovchi hisob raqami</label>
+                            <input type="text" class="form-control" id="payEditUserId">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditOrder">Chek raqami</label>
+                            <input type="text" disabled class="form-control" id="payEditOrder">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditSum">To'lov summasi</label>
+                            <input type="text" class="form-control" id="payEditSum">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditTarget">To'lov maqsadi</label>
+                            <input type="text" class="form-control" id="payEditTarget">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditType">To'lov turi</label>
+                            <select name="payType" class="form-control" id="payEditType">
+                                <option value="cash">Naqd</option>
+                                <option value="cart">Plastik karta</option>
+                                <option value="transit">Pul o'tkazish</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="payEditDate">Sana</label>
+                            <input type="date" disabled class="form-control" id="payEditDate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="editBtn">Saqlash</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="workingBlock">
+    <div class="row my-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Menejer: <span id="kassir"></span></h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payUser">To'lovchi</label>
+                                <input type="text" class="form-control" id="payUser">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payUserId">To'lovchi hisob raqami</label>
+                                <input type="text" class="form-control" id="payUserId">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payOrder">Chek raqami</label>
+                                <input type="text" class="form-control" id="payOrder">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="paySum">To'lov summasi</label>
+                                <input type="text" class="form-control" id="paySum">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payTarget">To'lov maqsadi</label>
+                                <input type="text" class="form-control" id="payTarget">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payType">To'lov turi</label>
+                                <select name="payType" class="form-control" id="payType">
+                                    <option value="cash">Naqd</option>
+                                    <option value="cart">Plastik karta</option>
+                                    <option value="transit">Pul o'tkazish</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="payDate">Sana</label>
+                                <input type="date" class="form-control" id="payDate">
+                            </div>
+                        </div>
+                        <div class="col-md-4 pt-4">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success mt-2" id="addPay">Qo'shish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <th>T/R</th>
+                            <th>F.I.Sh</th>
+                            <th>To'lov summasi</th>
+                            <th>Chek raqami</th>
+                            <th>To'lov maqsadi</th>
+                            <th>Sana</th>
+                            <th>Amallar</th>
+                        </tr>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-light" style="margin-top: 100px">
+    <div class="row mt-4 bg-light">
+        <div class="col-md-12">
+            <a type="button" class="btn btn-light mx-4 ml-5" style="padding-left: 70px">
+                <h3>Help</h3>
+                <p>Search</p>
+                <p>Consultant</p>
+                <p>Help % fAqs</p>
+                <p>Location & Store</p>
+            </a>
+            <a type="button" class="btn btn-light mx-4 ml-5">
+                <h3>Support</h3>
+                <p>Contact us</p>
+                <p>Orders and returns</p>
+                <p>Consultant</p>
+                <p>Help % fAqs</p>
+            </a>
+            <a type="button" class="btn btn-light mx-4 ml-5">
+                <h3>Information</h3>
+                <p>About us</p>
+                <p>Privacy & Policy</p>
+                <p>Terms & Conditions</p>
+                <p>Manufactures</p>
+            </a>
+            <a type="button" class="btn btn-light mx-4 ml-5">
+                <h3>Contact us</h3>
+                <p class="text-left">No:Bektemir</p>
+                <p class="text-left">Bektemir IT Park</p>
+                <span style="margin-left: -75px">&#128222; +91 12345678</span> <br>
+                <span style="margin-top: 30px">&#9993; support@somemail.com</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="Bootstrap/js/jQuery.min.js"></script>
+<script src="Bootstrap/js/src/popover.js"></script>
+<script src="Bootstrap/js/bootstrap.js"></script>
+<script src="Bootstrap/js/main7.js"></script>
+</body>
+</html>
